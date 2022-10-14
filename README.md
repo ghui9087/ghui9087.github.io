@@ -1,4 +1,3 @@
-# ghui9087.github.io
 <html>
 <b>PINGPONGBALL</b>
 <n>MAN VS COMPUNTER</n>
@@ -125,6 +124,6 @@ function colorRect(leftX,topY, width,height, drawColor) {
 }
 
 </script>
-
-</html>
 //Hope no one can see 3001
+</html>
+
