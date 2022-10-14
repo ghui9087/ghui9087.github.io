@@ -134,24 +134,24 @@
 	function drawEverything() {
 		colorRect(0, 0, canvas.width, canvas.height, '#000000');
 
-		// if(showingWinScreen) {
-		// 	canvasContext.fillStyle = '#ffff73';
+		if(showingWinScreen) {
+			canvasContext.fillStyle = '#ffff73';
 
-		// 	if(player1Score >= WINNING_SCORE) {
-		// 		canvasContext.fillText("PEOPLE WON", 350, 200);
-		//     canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
+			if(player1Score >= WINNING_SCORE) {
+				canvasContext.fillText("PEOPLE WON", 350, 200);
+		    canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
 
-		//     canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
-		// 	} else if(player2Score >= WINNING_SCORE) {
-		// 		canvasContext.fillText("COUMPUTER WON", 350, 200);
-		//     canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
+		    canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
+			} else if(player2Score >= WINNING_SCORE) {
+				canvasContext.fillText("COUMPUTER WON", 350, 200);
+		    canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
 
-		//     canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
-		// 	}
+		    canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
+			}
 
-		// 	canvasContext.fillText("click to continue", 350, 500);
-		// 	return;
-		// }
+			canvasContext.fillText("click to continue", 350, 500);
+			return;
+		}
 
 		drawNet();
 
