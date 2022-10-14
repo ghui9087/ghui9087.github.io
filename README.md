@@ -122,7 +122,7 @@ function colorRect(leftX,topY, width,height, drawColor) {
 	canvasContext.fillStyle = drawColor;
 	canvasContext.fillRect(leftX,topY, width,height);
 }
-//Hope no one can see 3001
+//Hope no one can see 3301
 </script>
 
 </html>
