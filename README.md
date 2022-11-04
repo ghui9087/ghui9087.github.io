@@ -70,6 +70,7 @@
 		ballSpeedX = -ballSpeedX;
 		ballX = canvas.width / 2;
 		ballY = canvas.height / 2;
+		paddle2Y = canvas.height / 2;
 	}
 
 	function computerMovement() {
