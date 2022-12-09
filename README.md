@@ -15,7 +15,7 @@
 
 	var player1Score = 0;
 	var player2Score = 0;
-	const WINNING_SCORE = 3;
+	const WINNING_SCORE = 21;
 
 	var showingWinScreen = false;
 
