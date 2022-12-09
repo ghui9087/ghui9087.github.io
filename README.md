@@ -9,10 +9,13 @@
 	var ballY = 50;
 	var ballSpeedX = 10;
 	var ballSpeedY = 4;
+	var ballColorLevel = 0;
+	var ballColor = '#FF0000';
+
 
 	var player1Score = 0;
 	var player2Score = 0;
-	const WINNING_SCORE = 21;
+	const WINNING_SCORE = 3;
 
 	var showingWinScreen = false;
 
@@ -71,14 +74,17 @@
 		ballX = canvas.width / 2;
 		ballY = canvas.height / 2;
 		paddle2Y = canvas.height / 2;
+
+		ballColorLevel = 0;
+		ballColor = '#FF0000';
 	}
 
 	function computerMovement() {
 		var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT / 2);
 		if (paddle2YCenter < ballY - 3) {
-			paddle2Y = paddle2Y + 10;
+			paddle2Y = paddle2Y + 15;
 		} else if (paddle2YCenter > ballY + 3) {
-			paddle2Y = paddle2Y - 10;
+			paddle2Y = paddle2Y - 15;
 		}
 	}
 
@@ -124,6 +130,7 @@
 		if (ballY > canvas.height) {
 			ballSpeedY = -ballSpeedY;
 		}
+		colorBallTime();
 	}
 
 	function drawNet() {
@@ -135,19 +142,19 @@
 	function drawEverything() {
 		colorRect(0, 0, canvas.width, canvas.height, '#000000');
 
-		if(showingWinScreen) {
+		if (showingWinScreen) {
 			canvasContext.fillStyle = '#ffff73';
 
-			if(player1Score >= WINNING_SCORE) {
+			if (player1Score >= WINNING_SCORE) {
 				canvasContext.fillText("PEOPLE WON", 350, 200);
-		    canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
+				canvasContext.fillText("PINGPONGBALL", 150, canvas.height / 2 - 200);
 
-		    canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
-			} else if(player2Score >= WINNING_SCORE) {
+				canvasContext.fillText("PEOPLE VS COUMPUTER", 130, canvas.height / 2 - 190);
+			} else if (player2Score >= WINNING_SCORE) {
 				canvasContext.fillText("COUMPUTER WON", 350, 200);
-		    canvasContext.fillText("PINGPONGBALL",150,canvas.height/2 - 200);
+				canvasContext.fillText("PINGPONGBALL", 150, canvas.height / 2 - 200);
 
-		    canvasContext.fillText("PEOPLE VS COUMPUTER",130,canvas.height/2 - 190);
+				canvasContext.fillText("PEOPLE VS COUMPUTER", 130, canvas.height / 2 - 190);
 			}
 
 			canvasContext.fillText("click to continue", 350, 500);
@@ -163,8 +170,9 @@
 		colorRect(canvas.width - PADDLE_THICKNESS, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, '#E74C3C');
 
 		// next line draws the ball
-		colorCircle(ballX, ballY, 10, '#ffffff');
+		colorCircle(ballX, ballY, 10, ballColor);
 
+		canvasContext.fillStyle = '#ffff73';
 		canvasContext.fillText("Score " + player1Score, 100, 300);
 		canvasContext.fillText("Score " + player2Score, canvas.width - 100, 300);
 		canvasContext.fillText("PINGPONGBALL", 150, canvas.height / 2 - 200);
@@ -183,8 +191,39 @@
 		canvasContext.fillStyle = drawColor;
 		canvasContext.fillRect(leftX, topY, width, height);
 	}
-//Hope no one can see 3301
-//Three. Three. Can you hear me? There is a hole shining in the holes between your eyelids. I have never been to Versailles before. I want to be loved. Zero. I am standing behind you now. One. I am two of us, standing behind you now. The goddess eats the city in the sea. Is. There's a hole in the floor with an answer waiting in it. God. Look, you're hatching. You're hatching!
+
+	function colorBallTime() {
+
+		switch (ballColorLevel) {
+			case 00: ballColor = '#ff0000';
+				break;
+			case 05: ballColor = '#ff7000';
+				break;
+			case 10: ballColor = '#ff7300';
+				break;
+			case 15: ballColor = '#ff7700';
+				break;
+			case 20: ballColor = '#ff7f00';
+				break;
+			case 25: ballColor = '#ff7ff0';
+				break;
+			case 40: ballColor = '#ffff00';
+				break;
+			case 60: ballColor = '#00ff00';
+				break;
+			case 80: ballColor = '#0000ff';
+				break;
+			case 100: ballColor = '#9400d3';
+				ballColorLevel = -20;
+				break;
+
+			default:
+				break;
+		}
+
+		ballColorLevel += 1;
+	}
+//Hope no one can see 3301/Three. Three. Can you hear me? There is a hole shining in the holes between your eyelids. I have never been to Versailles before. I want to be loved. Zero. I am standing behind you now. One. I am two of us, standing behind you now. The goddess eats the city in the sea. Is. There's a hole in the floor with an answer waiting in it. God. Look, you're hatching. You're hatching!
 </script>
 
 </html>
